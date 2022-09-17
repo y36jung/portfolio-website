@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-primary);
+    line-height: 1.5em;
+}
+
+/* Custom Properties */
+
+:root {
+    --ff-primary: 'Consolas', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #000000;
+    --clr-accent: #16e0ed;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+
+/* General Styles */
+body {
+   height: 100vh;
+   width: 100vw;
+   background-color: var(--clr-dark);
+   overflow: hidden;
+
+   /* Centers all direct child elements with position: relative */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+section {
+    /* Places section as a whole in center */
+    position : absolute;
+    width: 70%;
+    height: 70%;
+
+    /* Puts .container in section to center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* General classes */
+.clicker {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.background {
+    /* 100% of height and width of body */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    transition: opacity 1s linear;
+}
+
+.container {
+    /* Placement of .section_title and .section_subtitle */
+    display: block;
+    text-align: center;
+}
+
+.container_about {
+    height: 100%;
+    width: 100%;
+}
+
+.container_skills {
+    height: 65%;
+    width: 100%;
+}
+
+.row {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.column {
+    border: 2px solid yellow;
+    display: block;
+    padding: 20px;
+    flex: 50%;
+}
+
+.column_resize {
+    font-size: 0vw;
+    border: 2px solid yellow;
+    display: block;
+    padding: 20px;
+    flex: 50%;
+}
+
+
+.section_title {
+    text-align: center;
+    font-size: var(--fs-h1);
+    color: var(--clr-light);
+}
+
+
+.section_subtitle {
+    font-size: var(--fs-h3);
+    color: var(--clr-light);
+}
+
+.section_content {
+    font-size: 100%;
+    text-align:left;
+    color: var(--clr-light);
+}
+
+.aboutsize {
+    font-size: 0vw;
+    transition: font-size 0.2s linear;
+}
+
+/* Introduction */
+.intro {
+    border: 5px solid green;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.section_subtitle {
+    opacity: 1;
+    animation: blinks 0.5s step-start infinite;
+}
+
+/* About Me */
+.about {
+    display: flex;
+    bottom: 41%;
+    width: 0%;
+    height: 0%;
+    border: 5px solid orange;
+    opacity: 0;
+
+    transition: width 0.2s linear, height 0.2s linear;
+}
+
+
+/* Skills */
+.skills {
+    width: 80%;
+    height: 55%;
+    top: 5%;
+    border: 5px solid red;
+    opacity: 0;
+
+    transition: opacity 1s linear;
+}
+
+/* Projects */
+.projects {
+    left: 45%;
+    bottom: 40%;
+    width: 0%;
+    height: 0%;
+    border: 5px solid yellow;
+    opacity: 0;
+
+    transition: width 0.2s linear, height 0.2s linear;
+}
+
+/* Socials */
+.socials {
+    right: 65%;
+    bottom: 40%;
+    width: 0%;
+    height: 0%;
+    border: 5px solid turquoise;
+    opacity: 0;
+
+    transition: width 0.2s linear, height 0.2s linear;
+}
+
+/* Images */
+.images {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-height: 35%;
+    max-width: 70%;
+    position: absolute;
+    top: 60%;
+    opacity: 0;
+}
+
+.room {
+    width: 100%;
+    height: 100%;
+}
+
+.sat {
+    margin-right: 55%;
+    opacity: 1;
+}
+
+.desk {
+    margin-right: 55%;
+    z-index: 1;
+}
+
+.desk_stand {
+    margin-right: 55%;
+}
+
+.walk {
+    margin-right: 55%;
+    transition: margin-right 3s linear 0.2s;
+}
+
+.walkbook {
+    transition: margin-right 1s linear 1s;
+}
+
+.bookshelf_nobook{
+    z-index: -1;
+}
+
+.slide-in {
+    animation: slide-in 3s linear;
+}
+
+.slide-out {
+    animation: slide-out 3s linear;
+}
+
+.slide-up {
+    animation: slide-up 1s linear;
+}
+
+.to-start {
+    animation: to-start 1s linear;
+}
+
+/* Transitions */
+.step-back {
+    margin-right: calc(14vh * 2.725);
+}
+
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+.pop-in {
+    width: 95%;
+    height: 55%;
+
+    transition: width 0.2s linear 1.5s, height 0.2s linear 1.5s;
+}
+
+.pop-in_title{
+    font-size: 7vw;
+    transition: font-size 0.2s linear 1.5s;
+}
+
+.pop-in_content {
+    font-size: 2.4vw;
+    transition: font-size 0.2s linear 1.5s;
+}
+
+.pop-in_projects {
+    width: 40%;
+    height: 50%;
+    transition: width 0.2s linear 1.5s, height 0.2s linear 1.5s;
+}
+
+.pop-in_socials {
+    width: 18%;
+    height: 50%;
+    transition: width 0.2s linear 1.5s, height 0.2s linear 1.5s;
+}
+
+/* Keyframes */
+@keyframes blinks {
+    50% {opacity: 0}
+}
+
+@keyframes slide-in {
+    from {margin-right: -200%}
+}
+
+@keyframes slide-out {
+    to {margin-right: 200%}
+}
+
+@keyframes to-start {
+    to {margin-right: 55%}
+}
+
+@keyframes slide-up {
+    from {margin-bottom: -100%}
+}
+
+/* Media query */
+
+@media (min-width: 630px) {
+    .pop-in_title{
+        font-size: var(--fs-h1);
+        transition: font-size 0.2s linear 1.5s;
+    }
+    
+    .pop-in_content {
+        font-size: var(--fs-body);
+        transition: font-size 0.2s linear 1.5s;
+    }
+}
+
+@media (min-width: 675px) {
+    @keyframes slide-in {
+        from {margin-right: -150%}
+    }
+    
+    @keyframes slide-out {
+        to {margin-right: 150%}
+    }
+     
+}
+
+@media (min-width: 895px) {
+    .pop-in {
+        width: 850px;
+    }
+
+    .skills {
+        width: 55%;
+    }
+}
