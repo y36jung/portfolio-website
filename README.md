@@ -4,4 +4,4 @@ This is simply a fun side project made to understand DOMS and frontend developme
 
 ## Preview
 Preview of the portfolio website can be accessed [here](https://y36jung.github.io/portfolio-website/)
-* Animation works better on Chrome due to compatibility issues.
+❗ Animation works better on Chrome due to compatibility issues.
